@@ -1,0 +1,6 @@
+.idea/
+*.iml
+target/
+.allure/
+allure-results/
+.envrc
