@@ -3,17 +3,20 @@ package com.epam.wilk.stepsimplementation;
 public class LoginStepsImplementation extends CommonStepsImplementation {
 
     public void signIn(String email, String password) {
+        loginPage.checkSignInHeaderVisible();
         fillLoginData(email, password);
         loginPage.SIGN_IN.execute();
     }
 
     public void openRegistrationView() {
+        loginPage.checkSignInHeaderVisible();
         loginPage.OPEN_REGISTRATION.execute();
         loginPage.waitUntilElementAppears(loginPage.NEW_EMAIL_INPUT);
         loginPage.waitUntilElementAppears(loginPage.NEW_EMAIL_INPUT);
     }
 
     public void register(String emailAddress, String password, String confirmPassword) {
+        loginPage.checkSignUpHeaderVisible();
         fillRegistrationData(emailAddress, password, confirmPassword);
         loginPage.CREATE_ACCOUNT.execute();
     }
@@ -36,6 +39,7 @@ public class LoginStepsImplementation extends CommonStepsImplementation {
 
     public void userLogIn(String emailAddress, String password) {
         mainPage.OPEN_SIGN_IN_MODAL.execute();
+        loginPage.checkSignInHeaderVisible();
         fillLoginData(emailAddress, password);
         loginPage.SIGN_IN.execute();
     }

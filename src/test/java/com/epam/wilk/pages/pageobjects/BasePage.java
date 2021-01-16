@@ -17,7 +17,7 @@ public class BasePage {
     @Inject
     protected WebDriver driver;
 
-    public boolean isElementVisible(ElementSupplier<WebElement> elementSupplier){
+    public boolean isElementVisible(ElementSupplier<WebElement> elementSupplier) {
         return elementSupplier.get().isDisplayed();
     }
 
@@ -29,14 +29,14 @@ public class BasePage {
         return wait.until(webDriver -> elementSupplier.get());
     }
 
-    public void waitUntilElementIsEnabled(ElementSupplier<WebElement> elementSupplier) {
+    public WebElement waitUntilElementIsEnabled(ElementSupplier<WebElement> elementSupplier) {
         var wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.elementToBeClickable(elementSupplier.get()));
+        return wait.until(ExpectedConditions.elementToBeClickable(elementSupplier.get()));
     }
 
     public WebElement waitUntilElementIsVisible(By locator) {
         var wait = new WebDriverWait(driver, 5);
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
 }

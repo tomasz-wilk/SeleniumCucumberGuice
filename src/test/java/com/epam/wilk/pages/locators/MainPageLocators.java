@@ -8,5 +8,4 @@ public class MainPageLocators {
     public static By MY_ACCOUNT_DROPDOWN_LOCATOR = By.xpath("//div[@id='header-area']//div[@class='dropdown header_bar-my_account']/a[text()='My account']");
     public static By SEARCH_INPUT_LOCATOR = By.xpath("//div[@id='search']//input[@name='substring']");
     public static By SEARCH_SUBMIT_LOCATOR = By.xpath("//div[@id='search']//button  ");
-  //  (//div[@id='instant_search_menu']//dl)[1]/dt[1]
 }

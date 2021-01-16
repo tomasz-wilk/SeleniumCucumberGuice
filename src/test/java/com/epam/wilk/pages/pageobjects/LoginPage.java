@@ -30,14 +30,19 @@ public class LoginPage extends BasePage {
     public ExecuteCommand OPEN_REGISTRATION = () -> waitUntilElementAppears(CREATE_NEW_ACCOUNT_BUTTON).click();
     public ExecuteCommand CREATE_ACCOUNT = () -> CREATE_BUTTON.get().click();
 
-    public void openRegistrationView() {
-    }
-
     public void verifyLoginErrorIsDisplayed() {
         assertThat(waitUntilElementAppears(LOGIN_ERROR_MESSAGE).isDisplayed());
     }
 
     public void verifySignInButtonIsVisible() {
         assertThat(SIGN_IN_BUTTON.get().isEnabled());
+    }
+
+    public void checkSignInHeaderVisible() {
+        waitUntilElementIsVisible(LoginPageLocators.LOGIN_HEADER_LOCATOR);
+    }
+
+    public void checkSignUpHeaderVisible() {
+        waitUntilElementIsVisible(LoginPageLocators.MY_ACCOUNT_HEADER_LOCATOR);
     }
 }

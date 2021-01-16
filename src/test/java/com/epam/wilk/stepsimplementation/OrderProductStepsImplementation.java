@@ -16,4 +16,6 @@ public class OrderProductStepsImplementation extends CommonStepsImplementation {
     }
 
     public void addToCart() {
-        productDetailsPage.ADD_PRODUCT_TO_CART.execute(
+        productDetailsPage.ADD_PRODUCT_TO_CART.execute();
+    }
+}
