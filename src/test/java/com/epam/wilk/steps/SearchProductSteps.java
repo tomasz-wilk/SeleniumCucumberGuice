@@ -13,7 +13,7 @@ public class SearchProductSteps {
     private SearchProductStepsImplementation searchProductStepsImplementation;
 
     @When("I select first product from Search dropdown")
-    public void iSelectProductFromSearchDropdown() throws InterruptedException {
+    public void iSelectProductFromSearchDropdown() {
         searchProductStepsImplementation.selectProductFromDropdown(SEARCH_PRODUCT, 1);
     }
 
