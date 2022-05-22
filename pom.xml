@@ -10,6 +10,7 @@
 
     <properties>
         <cucumber.version>6.8.0</cucumber.version>
+        <junit.version>5.8.2</junit.version>
         <assertj.version>3.18.1</assertj.version>
         <aeonbits.version>1.0.12</aeonbits.version>
         <selenium-java.version>3.141.59</selenium-java.version>
@@ -35,6 +36,12 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-guice</artifactId>
             <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>

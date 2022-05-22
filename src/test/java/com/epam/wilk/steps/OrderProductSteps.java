@@ -1,8 +1,5 @@
 package com.epam.wilk.steps;
 
-import com.epam.wilk.pages.pageobjects.AddProductPage;
-import com.epam.wilk.pages.pageobjects.CheckoutPage;
-import com.epam.wilk.pages.pageobjects.ProductDetailsPage;
 import com.epam.wilk.stepsimplementation.OrderProductStepsImplementation;
 import com.google.inject.Inject;
 import io.cucumber.java.en.Then;

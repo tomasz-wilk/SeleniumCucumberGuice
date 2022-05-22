@@ -6,6 +6,7 @@ import com.google.inject.Inject;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 
 public class CommonSteps {
@@ -19,9 +20,14 @@ public class CommonSteps {
     @Inject
     private LoginStepsImplementation loginStepsImplementation;
 
-    @Before
+    @Before(order = 0)
     public void setup() {
         webDriver.get(properties.getBaseUrl());
+    }
+
+    @Before(value = "@predefinedCookie", order = 1)
+    public void setCookie() {
+        webDriver.manage().addCookie(new Cookie("xid", "dNHwsI4Ue20kvPwveIWF8z4jiG0DDwie", ".demostore.x-cart.com", "/", null));
     }
 
     @After

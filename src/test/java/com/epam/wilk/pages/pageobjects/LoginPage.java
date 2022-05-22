@@ -5,6 +5,7 @@ import com.epam.wilk.pages.objecthandlers.ElementSupplier;
 import com.epam.wilk.pages.objecthandlers.ExecuteCommand;
 import com.epam.wilk.pages.objecthandlers.SetValue;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -39,6 +40,8 @@ public class LoginPage extends BasePage {
     }
 
     public void checkSignInHeaderVisible() {
+//        var action = new Actions(driver).moveToElement(LOGIN_ERROR_MESSAGE.get()).build();
+//        action.perform();
         waitUntilElementIsVisible(LoginPageLocators.LOGIN_HEADER_LOCATOR);
     }
 
