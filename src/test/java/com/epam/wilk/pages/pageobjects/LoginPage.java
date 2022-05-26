@@ -10,16 +10,16 @@ import org.openqa.selenium.interactions.Actions;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class LoginPage extends BasePage {
-    private ElementSupplier<WebElement> EMAIL_INPUT = () -> driver.findElement(LoginPageLocators.EMAIL_INPUT_LOCATOR);
-    private ElementSupplier<WebElement> PASSWORD_INPUT = () -> driver.findElement(LoginPageLocators.PASSWORD_INPUT_LOCATOR);
-    private ElementSupplier<WebElement> SIGN_IN_BUTTON = () -> driver.findElement(LoginPageLocators.SIGN_IN_BUTTON_LOCATOR);
-    private ElementSupplier<WebElement> LOGIN_ERROR_MESSAGE = () -> driver.findElement(LoginPageLocators.LOGIN_ERROR_MESSAGE_LOCATOR);
+    private ElementSupplier<WebElement> EMAIL_INPUT = () -> chromeDriverContainer.getDriver().findElement(LoginPageLocators.EMAIL_INPUT_LOCATOR);
+    private ElementSupplier<WebElement> PASSWORD_INPUT = () -> chromeDriverContainer.getDriver().findElement(LoginPageLocators.PASSWORD_INPUT_LOCATOR);
+    private ElementSupplier<WebElement> SIGN_IN_BUTTON = () -> chromeDriverContainer.getDriver().findElement(LoginPageLocators.SIGN_IN_BUTTON_LOCATOR);
+    private ElementSupplier<WebElement> LOGIN_ERROR_MESSAGE = () -> chromeDriverContainer.getDriver().findElement(LoginPageLocators.LOGIN_ERROR_MESSAGE_LOCATOR);
 
-    public ElementSupplier<WebElement> CREATE_NEW_ACCOUNT_BUTTON = () -> driver.findElement(LoginPageLocators.CREATE_NEW_ACCOUNT_LOCATOR);
-    public ElementSupplier<WebElement> NEW_EMAIL_INPUT = () -> driver.findElement(LoginPageLocators.NEW_EMAIL_INPUT_LOCATOR);
-    public ElementSupplier<WebElement> NEW_PASSWORD_INPUT = () -> driver.findElement(LoginPageLocators.NEW_PASSWORD_INPUT_LOCATOR);
-    public ElementSupplier<WebElement> CONFIRM_PASSWORD_INPUT = () -> driver.findElement(LoginPageLocators.CONFIRM_PASSWORD_INPUT_LOCATOR);
-    public ElementSupplier<WebElement> CREATE_BUTTON = () -> driver.findElement(LoginPageLocators.CREATE_BUTTON_LOCATOR);
+    public ElementSupplier<WebElement> CREATE_NEW_ACCOUNT_BUTTON = () -> chromeDriverContainer.getDriver().findElement(LoginPageLocators.CREATE_NEW_ACCOUNT_LOCATOR);
+    public ElementSupplier<WebElement> NEW_EMAIL_INPUT = () -> chromeDriverContainer.getDriver().findElement(LoginPageLocators.NEW_EMAIL_INPUT_LOCATOR);
+    public ElementSupplier<WebElement> NEW_PASSWORD_INPUT = () -> chromeDriverContainer.getDriver().findElement(LoginPageLocators.NEW_PASSWORD_INPUT_LOCATOR);
+    public ElementSupplier<WebElement> CONFIRM_PASSWORD_INPUT = () -> chromeDriverContainer.getDriver().findElement(LoginPageLocators.CONFIRM_PASSWORD_INPUT_LOCATOR);
+    public ElementSupplier<WebElement> CREATE_BUTTON = () -> chromeDriverContainer.getDriver().findElement(LoginPageLocators.CREATE_BUTTON_LOCATOR);
 
     public SetValue<String> EMAIL = (email) -> waitUntilElementAppears(EMAIL_INPUT).sendKeys(email);
     public SetValue<String> PASSWORD = (password) -> waitUntilElementAppears(PASSWORD_INPUT).sendKeys(password);

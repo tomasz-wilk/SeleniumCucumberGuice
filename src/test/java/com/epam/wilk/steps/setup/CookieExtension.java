@@ -21,7 +21,7 @@ public class CookieExtension implements BeforeEachCallback, AfterEachCallback {
     @Override
     public void beforeEach(ExtensionContext extensionContext) {
         System.out.println("before each");
-        webDriver = new ChromeDriverProvider().get();
+        webDriver = new ChromeDriverProvider().get().getDriver();
         var properties = ConfigFactory.create(TestProperties.class);
         webDriver.get(properties.getBaseUrl());
         webDriver.manage().addCookie(new Cookie("xid", "dNHwsI4Ue20kvPwveIWF8z4jiG0DDwie", ".demostore.x-cart.com", "/", null));

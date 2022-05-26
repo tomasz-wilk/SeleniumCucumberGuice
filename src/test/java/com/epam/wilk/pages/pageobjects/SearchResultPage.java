@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class SearchResultPage extends BasePage {
 
-    public ElementSupplier<List<WebElement>> FOUND_PRODUCTS_LIST = () -> driver.findElements(SearchResultPageLocators.FOUND_PRODUCTS_LIST_LOCATORS);
+    public ElementSupplier<List<WebElement>> FOUND_PRODUCTS_LIST = () -> chromeDriverContainer.getDriver().findElements(SearchResultPageLocators.FOUND_PRODUCTS_LIST_LOCATORS);
 
     public void verifyFoundProductListCount(Integer expectedProductsCount) {
         assertThat(FOUND_PRODUCTS_LIST.get().size()).isEqualTo(expectedProductsCount);

@@ -15,7 +15,7 @@ public class ConfigurationModule extends AbstractModule {
     protected void configure() {
         bind(TestProperties.class).toInstance(ConfigFactory.create(TestProperties.class));
         bind(BrowserWebDriverContainer.class).toInstance(new BrowserWebDriverContainer<>().withCapabilities(new ChromeOptions()));
-        bind(RemoteWebDriver.class).toProvider(ChromeDriverProvider.class).in(ScenarioScoped.class);
+        bind(ChromeDriverContainer.class).toProvider(ChromeDriverProvider.class).in(ScenarioScoped.class);
 //        bind(LifecycleManager.class).toInstance(new LifecycleManager());
     }
 }

@@ -9,8 +9,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ProductDetailsPage extends BasePage {
 
-    public ElementSupplier<WebElement> PRODUCT_HEADER = () -> driver.findElement(ProductDetailsPageLocators.PRODUCT_DETAILS_HEADER_LOCATOR);
-    public ElementSupplier<WebElement> ADD_TO_CART_BUTTON = () -> driver.findElement(ProductDetailsPageLocators.ADD_TO_CART_LOCATOR);
+    public ElementSupplier<WebElement> PRODUCT_HEADER = () -> chromeDriverContainer.getDriver().findElement(ProductDetailsPageLocators.PRODUCT_DETAILS_HEADER_LOCATOR);
+    public ElementSupplier<WebElement> ADD_TO_CART_BUTTON = () -> chromeDriverContainer.getDriver().findElement(ProductDetailsPageLocators.ADD_TO_CART_LOCATOR);
 
     public ExecuteCommand ADD_PRODUCT_TO_CART = () -> ADD_TO_CART_BUTTON.get().click();
 

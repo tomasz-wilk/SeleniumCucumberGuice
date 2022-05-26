@@ -11,11 +11,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class MainPage extends BasePage {
 
-    public ElementSupplier<WebElement> MAIN_HEADER_PAGE = () -> driver.findElement(MainPageLocators.MAIN_PAGE_HEADER_LOCATOR);
-    public ElementSupplier<WebElement> SIGN_IN_BUTTON = () -> driver.findElement(MainPageLocators.SIGN_IN_BUTTON_LOCATOR);
-    public ElementSupplier<WebElement> MY_ACCOUNT_DROPDOWN = () -> driver.findElement(MainPageLocators.MY_ACCOUNT_DROPDOWN_LOCATOR);
-    public ElementSupplier<WebElement> SEARCH_INPUT = () -> driver.findElement(MainPageLocators.SEARCH_INPUT_LOCATOR);
-    public ElementSupplier<WebElement> SEARCH_SUBMIT = () -> driver.findElement(MainPageLocators.SEARCH_SUBMIT_LOCATOR);
+    public ElementSupplier<WebElement> MAIN_HEADER_PAGE = () -> chromeDriverContainer.getDriver().findElement(MainPageLocators.MAIN_PAGE_HEADER_LOCATOR);
+    public ElementSupplier<WebElement> SIGN_IN_BUTTON = () -> chromeDriverContainer.getDriver().findElement(MainPageLocators.SIGN_IN_BUTTON_LOCATOR);
+    public ElementSupplier<WebElement> MY_ACCOUNT_DROPDOWN = () -> chromeDriverContainer.getDriver().findElement(MainPageLocators.MY_ACCOUNT_DROPDOWN_LOCATOR);
+    public ElementSupplier<WebElement> SEARCH_INPUT = () -> chromeDriverContainer.getDriver().findElement(MainPageLocators.SEARCH_INPUT_LOCATOR);
+    public ElementSupplier<WebElement> SEARCH_SUBMIT = () -> chromeDriverContainer.getDriver().findElement(MainPageLocators.SEARCH_SUBMIT_LOCATOR);
 
     public ExecuteCommand OPEN_SIGN_IN_MODAL = () -> SIGN_IN_BUTTON.get().click();
     public ExecuteCommand CLICK_SEARCH_INPUT = () -> SEARCH_INPUT.get().click();
@@ -31,7 +31,7 @@ public class MainPage extends BasePage {
     }
 
     public void selectProductFromDropdown(String product, int productIndex) {
-        driver.navigate().refresh();
+        chromeDriverContainer.getDriver().navigate().refresh();
         CLICK_SEARCH_INPUT.execute();
         SET_SEARCH_VALUE.set(product);
         waitUntilElementIsVisible(By.xpath("(//div[@id='instant_search_menu']//dl)[1]/dt[1]/a")).click();
