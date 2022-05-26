@@ -7,7 +7,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.Cookie;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class CommonSteps {
 
@@ -15,24 +15,24 @@ public class CommonSteps {
     private TestProperties properties;
 
     @Inject
-    private WebDriver webDriver;
+    private RemoteWebDriver driver;
 
     @Inject
     private LoginStepsImplementation loginStepsImplementation;
 
     @Before(order = 0)
     public void setup() {
-        webDriver.get(properties.getBaseUrl());
+        driver.get(properties.getBaseUrl());
     }
 
     @Before(value = "@predefinedCookie", order = 1)
     public void setCookie() {
-        webDriver.manage().addCookie(new Cookie("xid", "dNHwsI4Ue20kvPwveIWF8z4jiG0DDwie", ".demostore.x-cart.com", "/", null));
+        driver.manage().addCookie(new Cookie("xid", "dNHwsI4Ue20kvPwveIWF8z4jiG0DDwie", ".demostore.x-cart.com", "/", null));
     }
 
     @After
     public void teardown() {
-        webDriver.quit();
+        driver.quit();
     }
 
     @Given("I am on main page")

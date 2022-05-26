@@ -9,14 +9,15 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <cucumber.version>6.8.0</cucumber.version>
+        <cucumber.version>7.3.3</cucumber.version>
         <junit.version>5.8.2</junit.version>
         <assertj.version>3.18.1</assertj.version>
         <aeonbits.version>1.0.12</aeonbits.version>
-        <selenium-java.version>3.141.59</selenium-java.version>
-        <governator.version>1.17.10</governator.version>
-        <guice.version>4.2.2</guice.version>
+        <selenium-java.version>4.1.1</selenium-java.version>
+        <governator.version>1.17.12</governator.version>
+        <guice.version>5.1.0</guice.version>
         <lombok.version>1.18.12</lombok.version>
+        <testcontainers.version>1.17.1</testcontainers.version>
     </properties>
 
     <dependencies>
@@ -42,6 +43,24 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>testcontainers</artifactId>
+            <version>${testcontainers.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${testcontainers.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>selenium</artifactId>
+            <version>${testcontainers.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
