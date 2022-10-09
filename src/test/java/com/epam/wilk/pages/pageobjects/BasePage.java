@@ -30,12 +30,12 @@ public class BasePage {
     }
 
     public WebElement waitUntilElementIsEnabled(ElementSupplier<WebElement> elementSupplier) {
-        var wait = new WebDriverWait(driver, 5);
+        var wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return wait.until(ExpectedConditions.elementToBeClickable(elementSupplier.get()));
     }
 
     public WebElement waitUntilElementIsVisible(By locator) {
-        var wait = new WebDriverWait(driver, 5);
+        var wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
